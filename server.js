@@ -32,8 +32,13 @@ else
 const colors = require('colors');
 const validator = require('validator');
 const express = require('express'); // importing express package
+const morgan = require('morgan');
 
 const app = express(); // creates express application
+
+app.use(express.static('public'));
+
+app.use(morgan('dev'));
 
 app.get("/about", (request, response) =>
 {
@@ -49,6 +54,12 @@ app.get("/about", (request, response) =>
 app.get("/homepage", (request, response) =>
 {
     response.sendFile(__dirname + "/views/homepage.html")
+});
+
+// does not work
+app.get("/num", (request, response) =>
+{
+    response.send(`<h1>Number: ${request.params}</h1>`)
 });
 
 app.listen(3000, () =>
