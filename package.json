@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "colors": "^1.4.0",
+    "validator": "^13.15.15"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "package",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
