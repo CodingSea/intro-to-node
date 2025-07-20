@@ -1,3 +1,5 @@
+/*
+
 console.log("File is running");
 
 // npm init -y initilizes my file as a script package
@@ -22,11 +24,34 @@ else
     console.log(colors.red("Not an email"));
 }
 
+*/
+
 // npm init -y
 
 // npm install express
-
+const colors = require('colors');
+const validator = require('validator');
 const express = require('express'); // importing express package
 
 const app = express(); // creates express application
 
+app.get("/about", (request, response) =>
+{
+    response.sendFile(__dirname + "/views/about-me.html")
+});
+
+// exercise 2:
+// Create a /homepage route
+// for this route if the request is sent a file should be sent back
+// the file should be in the views folder called home.html
+// it should contain an h1 that says welcome to my site [NAME]
+
+app.get("/homepage", (request, response) =>
+{
+    response.sendFile(__dirname + "/views/homepage.html")
+});
+
+app.listen(3000, () =>
+{
+    console.log('Listening on port 3000')
+});
