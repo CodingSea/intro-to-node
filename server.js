@@ -1,6 +1,6 @@
 console.log("File is running");
 
-// npm init initilizes my file as a script package
+// npm init -y initilizes my file as a script package
 
 // npm install name-of-package
 
@@ -21,3 +21,12 @@ else
 {
     console.log(colors.red("Not an email"));
 }
+
+// npm init -y
+
+// npm install express
+
+const express = require('express'); // importing express package
+
+const app = express(); // creates express application
+
